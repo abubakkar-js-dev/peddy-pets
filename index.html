@@ -44,7 +44,27 @@
   <body class="font-lato">
     <!-- header  section start -->
     <header>
-        <h3 class="text-3xl ">Project Setup done</h3>
+        <nav class="w-11/12 mx-auto flex justify-between items-center py-14 relative md:static">
+          <div class="flex items-center gap-3">
+            <img class="w-7 h-7" src="./asstets/images/logo.webp" alt="logo img">
+            <a class="text-2xl md:text-3xl text-secondary font-medium" href="#">Peddy</a>
+          </div>
+          <div id="menu-sec" class="absolute md:static top-[120px] md:top-0 transform -translate-x-1/2 md:-translate-x-0 left-1/2 md:left-0 text-center w-full md:w-auto hidden md:block">
+            <ul class="w-full flex flex-col md:flex-row gap-4">
+              <li class="w-full hover:bg-slate-200 p-2 rounded-md transition block"><a class="text-gray-700 hover:text-secondary text-base" href="#top">Home</a></li>
+              <li class="w-full hover:bg-slate-200 p-2 rounded-md transition block"><a class="text-gray-700 hover:text-secondary text-base" href="#">Shop</a></li>
+              <li class="w-full hover:bg-slate-200 p-2 rounded-md transition block"><a class="text-gray-700 hover:text-secondary text-base" href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="flex items-center gap-8">
+            <span class="h-14 w-14 flex justify-center items-center border border-gray-300 rounded-full">
+              <img class="w-6" src="./asstets/icons/user.png" alt="user icons">
+            </span>
+            <span id="menu-bar" class="text-2xl text-gray-600 hover:bg-slate-200 py-2 px-3 rounded-md md:hidden transition">
+              <i class=" fa-solid fa-bars"></i>
+            </span>
+          </div>
+        </nav>
     </header>
     <!-- header section end -->
     <!-- main section start -->
