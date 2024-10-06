@@ -230,9 +230,7 @@
           class="grid grid-cols-1 md:grid-cols-4 justify-between items-start gap-6"
         >
           <!-- left side container start -->
-          <div
-            class="hidden md:col-span-3"
-          >
+          <div class="hidden md:col-span-3">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-6">
               <!-- card -->
               <div class="p-5 border border-gray-200 rounded-xl space-y-6">
@@ -456,7 +454,11 @@
             <div
               class="w-11/12 md:w-4/5 lg:w-3/5 mx-auto text-center flex flex-col justify-center items-center space-y-4"
             >
-              <img class="w-[100px] md:w-[120px] lg:w-[160px]" src="./asstets/images/error.webp" alt="error img" />
+              <img
+                class="w-[100px] md:w-[120px] lg:w-[160px]"
+                src="./asstets/images/error.webp"
+                alt="error img"
+              />
               <h2
                 class="capitalize text-xl md:text-2xl lg:text-3xl text-secondary font-bold pt-2"
               >
@@ -508,7 +510,69 @@
           <!-- right side end -->
         </section>
         <!-- category container end -->
-        <!--  -->
+        <!-- modals -->
+        <button class="btn" onclick="my_modal_5.showModal()">open modal</button>
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box max-w-[700px] p-6 md:p-8 rounded-xl">
+            <img
+              class="w-full object-cover h-[320px] rounded-lg mb-5 md:mb-6"
+              src="https://i.ibb.co.com/PFbWMGk/pet-6.jpg"
+              alt=""
+            />
+            <div>
+              <!-- pet information -->
+              <div>
+                <h3
+                  class="mb-3 md:mb-4 text-xl md:text-2xl font-bold text-secondary"
+                >
+                  Alessia Max
+                </h3>
+                <div class="space-y-2 pb-4 mb-4 border-b">
+                  <div class="flex flex-col md:flex-row gap-2 justify-between w-2/3">
+                    <span class="flex gap-2 text-base text-secondary/70">
+                      <img src="./asstets/icons/breed.png" alt="breed icon" />
+                      <p>Breed: Golder retriever</p>
+                    </span>
+                    <span class="flex gap-2 text-base text-secondary/70">
+                      <img src="./asstets/icons/birth.png" alt="birth icon" />
+                      <p>Birth: 2024</p>
+                    </span>
+                  </div>
+                  <div class="flex flex-col md:flex-row gap-2 justify-between w-2/3">
+                    <span class="flex gap-2 text-base text-secondary/70">
+                      <img src="./asstets/icons/gender.png" alt="breed icon" />
+                      <p>Gender: Female</p>
+                    </span>
+                    <span class="flex gap-2 text-base text-secondary/70">
+                      <img src="./asstets/icons/price.png" alt="breed icon" />
+                      <p>Price: 199$</p>
+                    </span> 
+                  </div>
+                  <div>
+                    <span class="flex gap-2 text-base text-secondary/70">
+                      <img src="./asstets/icons/gender.png" alt="breed icon" />
+                      <p>Vaccinated status: Partially</p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- details informaion -->
+              <div>
+                <h2 class="text-base font-semibold mb-3 text-secondary">Details Information</h2>
+                <p class="text-base text-secondary/70">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                <ul class="list-disc list-inside text-base text-secondary/70">
+                  <li class="pl-3">The point of using is that it has a more-or-less normal distribution of letters, as opposed to using.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="modal-action w-ful block">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="h-10 md:h-12 w-full text-lg md:text-xl text-primary bg-primary/10 hover:bg-primary/20 border border-primary/20 rounded-lg">Cancel</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
       </section>
       <!-- adopt best friend section end -->
     </main>
@@ -516,7 +580,7 @@
     <!-- footer section start  -->
     <footer class="bg-secondary">
       <div
-        class="w-11/12 mx-auto py-[100px] grid gap-10 md:gap-14 grid-cols-1 md:grid-cols-6 justify-between"
+        class="w-11/12 mx-auto py-[60px] md:py-[80px] lg:py-[100px] grid gap-10 md:gap-14 grid-cols-1 md:grid-cols-6 justify-between"
       >
         <!-- left column start -->
         <div class="md:col-span-3 lg:col-span-2 space-y-6">
