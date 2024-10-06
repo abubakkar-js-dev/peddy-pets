@@ -31,7 +31,7 @@
             colors: {
               primary: "#0E7A81",
               secondary: "#131313",
-              lightGray: "#5A5A5A",
+              lightgray: "#5A5A5A",
             },
             fontFamily: {
               lato: "Lato",
@@ -44,16 +44,17 @@
   <body class="font-lato">
     <!-- header  section start -->
     <header>
+      <!-- nav start -->
         <nav class="w-11/12 mx-auto flex justify-between items-center py-14 relative md:static">
           <div class="flex items-center gap-3">
             <img class="w-7 h-7" src="./asstets/images/logo.webp" alt="logo img">
             <a class="text-2xl md:text-3xl text-secondary font-medium" href="#">Peddy</a>
           </div>
           <div id="menu-sec" class="absolute md:static top-[120px] md:top-0 transform -translate-x-1/2 md:-translate-x-0 left-1/2 md:left-0 text-center w-full md:w-auto hidden md:block">
-            <ul class="w-full flex flex-col md:flex-row gap-4">
-              <li class="w-full hover:bg-slate-200 p-2 rounded-md transition block"><a class="text-gray-700 hover:text-secondary text-base" href="#top">Home</a></li>
-              <li class="w-full hover:bg-slate-200 p-2 rounded-md transition block"><a class="text-gray-700 hover:text-secondary text-base" href="#">Shop</a></li>
-              <li class="w-full hover:bg-slate-200 p-2 rounded-md transition block"><a class="text-gray-700 hover:text-secondary text-base" href="#">Contact</a></li>
+            <ul class="w-full flex flex-col md:flex-row gap-4 bg-gradient-to-t from-gray-100 md:from-transparent to-white md:to-transparent rounded-t-md md:bg-transparent">
+              <li class="w-full hover:bg-slate-200 md:hover:bg-transparent p-2 rounded-md transition block"><a class="text-gray-700 hover:text-secondary text-base" href="#top">Home</a></li>
+              <li class="w-full hover:bg-slate-200 md:hover:bg-transparent p-2 rounded-md transition block"><a class="text-gray-700 hover:text-secondary text-base" href="#">Shop</a></li>
+              <li class="w-full hover:bg-slate-200 md:hover:bg-transparent p-2 rounded-md transition block"><a class="text-gray-700 hover:text-secondary text-base" href="#">Contact</a></li>
             </ul>
           </div>
           <div class="flex items-center gap-8">
@@ -65,10 +66,29 @@
             </span>
           </div>
         </nav>
-    </header>
+       <!-- nav end -->
+      </header>
+      <!-- hero section start -->
+       <section class="w-11/12 mx-auto mb-12 md:mb-20 lg:mb-[100px]">
+          <div class="w-full md:w-3/4 xl:w-3/5 2xl:1/2 mx-auto">
+            <div class="text-center mb-8 md:mb-12 space-y-6">
+              <h3 class="text-lightgray text-lg md:text-xl lg:text-2xl font-bold">Bringing Families Together ❤️‍🔥 </h3>
+              <h1 class="text-3xl md:text-5xl lg:text-7xl text-secondary font-bold">Your Path to Adoption <br> Starts Here</h1>
+              <p class="text-base text-secondary pb-3">
+                Begin your adoption journey with personalized guidance, unwavering support, and valuable resources designed to meet your unique needs. We are dedicated to walking alongside you every step of the way, ensuring a smooth and fulfilling experience.</p>
+              <button class="h-12 md:h-14 text-white bg-primary hover:bg-transparent hover:text-black hover:border hover:border-primary px-8 rounded-xl text-base md:text-xl transition">View More</button>
+            </div>
+            <div class="w-auto">
+              <img class="mx-auto w-full max-w-[960px]" src="./asstets/images/pet.webp" alt="banner img dog and a cat">
+            </div>
+          </div>
+       </section>
+      <!-- hero section end -->
     <!-- header section end -->
     <!-- main section start -->
-    <main></main>
+    <main>
+      
+    </main>
     <!-- main section end -->
     <!-- footer section start  -->
     <footer></footer>
