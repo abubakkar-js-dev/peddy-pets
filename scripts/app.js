@@ -1,6 +1,7 @@
 const menuBar = document.getElementById('menu-bar');
 const menuSection = document.getElementById('menu-sec');
 const viewMoreBtn = document.getElementById('btn-view-more');
+const petsContainer = document.getElementById('pets-container');
 menuBar.addEventListener('click',()=>{
     if(menuSection.classList.contains('hidden')){
         menuSection.classList.remove('hidden');
@@ -24,12 +25,12 @@ const loadCategories = async ()=>{
 const displayCategories = (categories) =>{
     const categoryMenuContainer = document.getElementById('category-menu-container');
     categories.forEach(category => {
-        const div = document.createElement('div');
-        div.classList = "flex justify-center items-center text-lg md:text-xl lg:text-2xl font-bold text-secondary gap-4 p-4 md:p-6 border border-gray-300 rounded-xl md:max-w-[312px] w-full";
+      const btn = document.createElement('button');
+      btn.classList = "flex justify-center items-center text-lg md:text-xl lg:text-2xl font-bold text-secondary gap-4 p-4 md:p-6 border border-gray-300 rounded-xl md:max-w-[312px] w-full";
 
         const {category: category_name,category_icon} = category;
 
-        div.innerHTML = `
+        btn.innerHTML = `
             <img
               class="max-w-14"
               src=${category_icon}
@@ -37,14 +38,19 @@ const displayCategories = (categories) =>{
             />
             <span>${category_name}</span>
         `;
-        categoryMenuContainer.appendChild(div);
-        
+        btn.setAttribute('onclick',`loadCategoriesPets('${category_name}')`);
+        btn.setAttribute('id',`btn-categ-${category_name.toLowerCase()}`)
+        btn.classList.add('category-btn');
+        categoryMenuContainer.appendChild(btn);
+    
     });
 }
 
+
+
 // load all pets
-const loadPets = async()=>{
-    const response = await fetch('https://openapi.programming-hero.com/api/peddy/pets');
+const loadPets = async(petCategory)=>{
+  const response = await fetch(`https://openapi.programming-hero.com/api/peddy/${petCategory ? petCategory.toLowerCase() : 'pets'}`);
     const data = await response.json();
     displayPets(data.pets);
 }
@@ -52,6 +58,7 @@ const loadPets = async()=>{
 // display pet
 const displayPets = (pets) =>{
     const petsContainer = document.getElementById('pets-container');
+    petsContainer.innerHTML = "";
     pets.forEach(pet => {
         const div = document.createElement('div');
         div.classList = "p-5 border border-gray-200 rounded-xl space-y-6";
@@ -108,10 +115,46 @@ const displayPets = (pets) =>{
                 </div>
                 <!-- card content end -->
         `;
-
         petsContainer.appendChild(div);
     });
 }
 
+const resetActiveBtn = () =>{
+  const buttons = document.querySelectorAll('#category-menu-container button');
+  buttons.forEach((btn)=>{
+    btn.classList.remove('border-primary','bg-primary/10','!rounded-full');
+  })
+}
+
+// loadCategories post
+const loadCategoriesPets = async (category_name)=>{
+  const response = await fetch(`https://openapi.programming-hero.com/api/peddy/category/${category_name.toLowerCase()}`);
+  const data =  await response.json();
+  if(data.data.length === 0){
+      document.getElementById('no-category-container').classList.remove('hidden');
+  }else{
+    document.getElementById('no-category-container').classList.add('hidden');
+  }
+  // change the activity
+  resetActiveBtn();
+  const activeBtn = document.getElementById(`btn-categ-${category_name.toLowerCase()}`);
+
+  // if(activeBtn.classList.contains('rounded-xl')){
+  //   activeBtn.classList.remove('rounded-xl');
+  //   activeBtn.classList.add('rounded-full');
+  // }else{
+  //   activeBtn.classList.add('rounded-xl');
+  // }
+  activeBtn.classList.add('!rounded-full','border-primary','bg-primary/10');
+  
+
+
+  displayPets(data.data);
+}
+
+
+
+
+
 loadCategories();
-loadPets();
+loadPets(false);
