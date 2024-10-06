@@ -45,53 +45,457 @@
     <!-- header  section start -->
     <header>
       <!-- nav start -->
-        <nav class="w-11/12 mx-auto flex justify-between items-center py-14 relative md:static">
-          <div class="flex items-center gap-3">
-            <img class="w-7 h-7" src="./asstets/images/logo.webp" alt="logo img">
-            <a class="text-2xl md:text-3xl text-secondary font-medium" href="#">Peddy</a>
-          </div>
-          <div id="menu-sec" class="absolute md:static top-[120px] md:top-0 transform -translate-x-1/2 md:-translate-x-0 left-1/2 md:left-0 text-center w-full md:w-auto hidden md:block">
-            <ul class="w-full flex flex-col md:flex-row gap-4 bg-gradient-to-t from-gray-100 md:from-transparent to-white md:to-transparent rounded-t-md md:bg-transparent">
-              <li class="w-full hover:bg-slate-200 md:hover:bg-transparent p-2 rounded-md transition block"><a class="text-gray-700 hover:text-secondary text-base" href="#top">Home</a></li>
-              <li class="w-full hover:bg-slate-200 md:hover:bg-transparent p-2 rounded-md transition block"><a class="text-gray-700 hover:text-secondary text-base" href="#">Shop</a></li>
-              <li class="w-full hover:bg-slate-200 md:hover:bg-transparent p-2 rounded-md transition block"><a class="text-gray-700 hover:text-secondary text-base" href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div class="flex items-center gap-8">
-            <span class="h-14 w-14 flex justify-center items-center border border-gray-300 rounded-full">
-              <img class="w-6" src="./asstets/icons/user.png" alt="user icons">
-            </span>
-            <span id="menu-bar" class="text-2xl text-gray-600 hover:bg-slate-200 py-2 px-3 rounded-md md:hidden transition">
-              <i class=" fa-solid fa-bars"></i>
-            </span>
-          </div>
-        </nav>
-       <!-- nav end -->
-      </header>
-      <!-- hero section start -->
-       <section class="w-11/12 mx-auto mb-12 md:mb-20 lg:mb-[100px]">
-          <div class="w-full md:w-3/4 xl:w-3/5 2xl:1/2 mx-auto">
-            <div class="text-center mb-8 md:mb-12 space-y-6">
-              <h3 class="text-lightgray text-lg md:text-xl lg:text-2xl font-bold">Bringing Families Together ❤️‍🔥 </h3>
-              <h1 class="text-3xl md:text-5xl lg:text-7xl text-secondary font-bold">Your Path to Adoption <br> Starts Here</h1>
-              <p class="text-base text-secondary pb-3">
-                Begin your adoption journey with personalized guidance, unwavering support, and valuable resources designed to meet your unique needs. We are dedicated to walking alongside you every step of the way, ensuring a smooth and fulfilling experience.</p>
-              <button class="h-12 md:h-14 text-white bg-primary hover:bg-transparent hover:text-black hover:border hover:border-primary px-8 rounded-xl text-base md:text-xl transition">View More</button>
-            </div>
-            <div class="w-auto">
-              <img class="mx-auto w-full max-w-[960px]" src="./asstets/images/pet.webp" alt="banner img dog and a cat">
-            </div>
-          </div>
-       </section>
-      <!-- hero section end -->
+      <nav
+        class="w-11/12 mx-auto flex justify-between items-center py-14 relative md:static"
+      >
+        <div class="flex items-center gap-3">
+          <img
+            class="w-7 h-7"
+            src="./asstets/images/logo.webp"
+            alt="logo img"
+          />
+          <a class="text-2xl md:text-3xl text-secondary font-medium" href="#"
+            >Peddy</a
+          >
+        </div>
+        <div
+          id="menu-sec"
+          class="absolute md:static top-[120px] md:top-0 transform -translate-x-1/2 md:-translate-x-0 left-1/2 md:left-0 text-center w-full md:w-auto hidden md:block"
+        >
+          <ul
+            class="w-full flex flex-col md:flex-row gap-4 bg-gradient-to-t from-gray-100 md:from-transparent to-white md:to-transparent rounded-t-md md:bg-transparent"
+          >
+            <li
+              class="w-full hover:bg-slate-200 md:hover:bg-transparent p-2 rounded-md transition block"
+            >
+              <a
+                class="text-gray-700 hover:text-secondary text-base"
+                href="#top"
+                >Home</a
+              >
+            </li>
+            <li
+              class="w-full hover:bg-slate-200 md:hover:bg-transparent p-2 rounded-md transition block"
+            >
+              <a class="text-gray-700 hover:text-secondary text-base" href="#"
+                >Shop</a
+              >
+            </li>
+            <li
+              class="w-full hover:bg-slate-200 md:hover:bg-transparent p-2 rounded-md transition block"
+            >
+              <a class="text-gray-700 hover:text-secondary text-base" href="#"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="flex items-center gap-3">
+          <span
+            class="h-10 w-10 md:w-14 md:h-14 flex justify-center items-center border border-gray-300 rounded-full hover:border-primary/50 hover:bg-primary/10 transition"
+          >
+            <img
+              class="w-5 md:w-6"
+              src="./asstets/icons/user.png"
+              alt="user icons"
+            />
+          </span>
+          <span
+            id="menu-bar"
+            class="text-2xl text-gray-600 hover:bg-slate-200 py-2 px-3 rounded-md md:hidden transition"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </span>
+        </div>
+      </nav>
+      <!-- nav end -->
+    </header>
+    <!-- hero section start -->
+    <section class="w-11/12 mx-auto mb-12 md:mb-20 lg:mb-[100px]">
+      <div class="w-full md:w-3/4 xl:w-3/5 2xl:1/2 mx-auto">
+        <div class="text-center mb-8 md:mb-12 space-y-6">
+          <h3 class="text-lightgray text-lg md:text-xl lg:text-2xl font-bold">
+            Bringing Families Together ❤️‍🔥
+          </h3>
+          <h1 class="text-3xl md:text-5xl lg:text-7xl text-secondary font-bold">
+            Your Path to Adoption <br />
+            Starts Here
+          </h1>
+          <p class="text-base text-secondary pb-3">
+            Begin your adoption journey with personalized guidance, unwavering
+            support, and valuable resources designed to meet your unique needs.
+            We are dedicated to walking alongside you every step of the way,
+            ensuring a smooth and fulfilling experience.
+          </p>
+          <button
+            id="btn-view-more"
+            class="h-12 md:h-14 text-white bg-primary hover:bg-transparent hover:text-black border border-transparent hover:border-primary px-8 rounded-xl text-base md:text-xl transition"
+          >
+            View More
+          </button>
+        </div>
+        <div class="w-auto">
+          <img
+            class="mx-auto w-full max-w-[960px]"
+            src="./asstets/images/pet.webp"
+            alt="banner img dog and a cat"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- hero section end -->
     <!-- header section end -->
     <!-- main section start -->
     <main>
-      
+      <!-- adopt best friend section start -->
+      <section id="adopt-best-friend" class="w-11/12 mx-auto mb-8">
+        <div
+          class="text-center w-full md:w-3/5 lg:w-1/2 mx-auto space-y-6 mb-8 md:mb-12"
+        >
+          <h2 class="text-2xl md:text-3xl lg:text-4xl">
+            Adopt Your Best Friend
+          </h2>
+          <p class="text-base text-secondary/70">
+            Discover the joy of welcoming a loyal companion into your life
+            through adoption. Find your perfect match and give a deserving pet a
+            loving home.
+          </p>
+        </div>
+        <!-- category menu section start -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 justify-items-center mx-auto">
+            <div class="flex justify-center items-center text-lg md:text-xl lg:text-2xl font-bold text-secondary gap-4 p-4 md:p-6 md:max-w-[312px] w-full rounded-full border border-primary bg-primary/10">
+              <img class="max-w-14" src="https://i.ibb.co.com/N7dM2K1/cat.png" alt="pet image">
+              <span>Dogs</span>
+            </div>
+            <div class="flex justify-center items-center text-lg md:text-xl lg:text-2xl font-bold text-secondary gap-4 p-4 md:p-6 border border-gray-300 rounded-xl md:max-w-[312px] w-full">
+              <img class="max-w-14" src="https://i.ibb.co.com/N7dM2K1/cat.png" alt="pet image">
+              <span>Cats</span>
+            </div>
+            <div class="flex justify-center items-center text-lg md:text-xl lg:text-2xl font-bold text-secondary gap-4 p-4 md:p-6 border border-gray-300 rounded-xl md:max-w-[312px] w-full">
+              <img class="max-w-14" src="https://i.ibb.co.com/N7dM2K1/cat.png" alt="pet image">
+              <span>Rabbits</span>
+            </div>
+            <div class="flex justify-center items-center text-lg md:text-xl lg:text-2xl font-bold text-secondary gap-4 p-4 md:p-6 border border-gray-300 rounded-xl md:max-w-[312px] w-full">
+              <img class="max-w-14" src="https://i.ibb.co.com/N7dM2K1/cat.png" alt="pet image">
+              <span>Birds</span>
+            </div>
+          </div>
+        <!-- category menu section end -->
+
+        <!-- best deal start -->
+        <div class="flex justify-between items-center my-8">
+          <h3 class="text-xl md:text-2xl font-bold text-black capitalize">
+            best deal for you
+          </h3>
+          <button
+            class="h-12 md:h-14 text-white bg-primary hover:bg-transparent hover:text-black border border-transparent hover:border-primary px-6 md:px-8 rounded-xl text-base md:text-xl capitalize transition"
+          >
+            sort by price
+          </button>
+        </div>
+        <!-- best deal end -->
+        <!-- category container start -->
+        <!-- <section class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6"> -->
+        <section class="flex flex-col md:flex-row justify-between items-start gap-6">
+          <!-- left side start -->
+          <div
+            class="md:col-span-2 lg:col-span-3 grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-6"
+          >
+            <!-- card -->
+            <div class="p-5 border border-gray-200 rounded-xl space-y-6">
+              <img
+                class="w-full rounded-lg"
+                src="https://i.ibb.co.com/BwnvDMY/pet-5.jpg"
+                alt="pets image"
+              />
+              <!-- card content -->
+              <div class="">
+                <div class="border-b pb-3 mb-3 space-y-1">
+                  <h3 class="text-lg md:text-xl font-bold text-black">
+                    Mister Tartosh
+                  </h3>
+                  <span class="flex gap-2 text-base text-secondary/70">
+                    <img src="./asstets/icons/breed.png" alt="breed icon" />
+                    <p>Breed: Golder retriever</p>
+                  </span>
+                  <span class="flex gap-2 text-base text-secondary/70">
+                    <img src="./asstets/icons/birth.png" alt="birth icon" />
+                    <p>Birth: 2024</p>
+                  </span>
+                  <span class="flex gap-2 text-base text-secondary/70">
+                    <img src="./asstets/icons/gender.png" alt="breed icon" />
+                    <p>Gender: Female</p>
+                  </span>
+                  <span class="flex gap-2 text-base text-secondary/70">
+                    <img src="./asstets/icons/price.png" alt="breed icon" />
+                    <p>Price: 199$</p>
+                  </span>
+                </div>
+                <!-- card button start -->
+                <div class="flex justify-between">
+                  <button
+                    class="h-8 md:h-10 px-4 md:px-5 border-2 border-gray-200 hover:border-primary/20 hover:bg-primary/20 rounded-lg text-gray-500 font-bold text-base lg:text-lg"
+                  >
+                    <i class="fa-regular fa-thumbs-up"></i>
+                  </button>
+                  <button
+                    class="h-8 md:h-10 px-4 md:px-5 border-2 border-gray-200 hover:border-primary/20 hover:bg-primary/20 rounded-lg text-primary font-bold text-base lg:text-lg"
+                  >
+                    Adopt
+                  </button>
+                  <button
+                    class="h-8 md:h-10 px-4 md:px-5 border-2 border-gray-200 hover:border-primary/20 hover:bg-primary/20 rounded-lg text-primary font-bold text-base lg:text-lg"
+                  >
+                    Details
+                  </button>
+                </div>
+                <!-- card button end -->
+              </div>
+              <!-- card content end -->
+            </div>
+            <!-- card end -->
+            <!-- card -->
+            <div class="p-5 border border-gray-200 rounded-xl space-y-6">
+              <img
+                class="w-full rounded-lg"
+                src="https://i.ibb.co.com/BwnvDMY/pet-5.jpg"
+                alt="pets image"
+              />
+              <!-- card content -->
+              <div class="">
+                <div class="border-b pb-3 mb-3 space-y-1">
+                  <h3 class="text-lg md:text-xl font-bold text-black">
+                    Mister Tartosh
+                  </h3>
+                  <span class="flex gap-2 text-base text-secondary/70">
+                    <img src="./asstets/icons/breed.png" alt="breed icon" />
+                    <p>Breed: Golder retriever</p>
+                  </span>
+                  <span class="flex gap-2 text-base text-secondary/70">
+                    <img src="./asstets/icons/birth.png" alt="birth icon" />
+                    <p>Birth: 2024</p>
+                  </span>
+                  <span class="flex gap-2 text-base text-secondary/70">
+                    <img src="./asstets/icons/gender.png" alt="breed icon" />
+                    <p>Gender: Female</p>
+                  </span>
+                  <span class="flex gap-2 text-base text-secondary/70">
+                    <img src="./asstets/icons/price.png" alt="breed icon" />
+                    <p>Price: 199$</p>
+                  </span>
+                </div>
+                <!-- card button start -->
+                <div class="flex justify-between">
+                  <button
+                    class="h-8 md:h-10 px-4 md:px-5 border-2 border-gray-200 hover:border-primary/20 hover:bg-primary/20 rounded-lg text-gray-500 font-bold text-base lg:text-lg"
+                  >
+                    <i class="fa-regular fa-thumbs-up"></i>
+                  </button>
+                  <button
+                    class="h-8 md:h-10 px-4 md:px-5 border-2 border-gray-200 hover:border-primary/20 hover:bg-primary/20 rounded-lg text-primary font-bold text-base lg:text-lg"
+                  >
+                    Adopt
+                  </button>
+                  <button
+                    class="h-8 md:h-10 px-4 md:px-5 border-2 border-gray-200 hover:border-primary/20 hover:bg-primary/20 rounded-lg text-primary font-bold text-base lg:text-lg"
+                  >
+                    Details
+                  </button>
+                </div>
+                <!-- card button end -->
+              </div>
+              <!-- card content end -->
+            </div>
+            <!-- card end -->
+            <!-- card -->
+            <div class="p-5 border border-gray-200 rounded-xl space-y-6">
+              <img
+                class="w-full rounded-lg"
+                src="https://i.ibb.co.com/BwnvDMY/pet-5.jpg"
+                alt="pets image"
+              />
+              <!-- card content -->
+              <div class="">
+                <div class="border-b pb-3 mb-3 space-y-1">
+                  <h3 class="text-lg md:text-xl font-bold text-black">
+                    Mister Tartosh
+                  </h3>
+                  <span class="flex gap-2 text-base text-secondary/70">
+                    <img src="./asstets/icons/breed.png" alt="breed icon" />
+                    <p>Breed: Golder retriever</p>
+                  </span>
+                  <span class="flex gap-2 text-base text-secondary/70">
+                    <img src="./asstets/icons/birth.png" alt="birth icon" />
+                    <p>Birth: 2024</p>
+                  </span>
+                  <span class="flex gap-2 text-base text-secondary/70">
+                    <img src="./asstets/icons/gender.png" alt="breed icon" />
+                    <p>Gender: Female</p>
+                  </span>
+                  <span class="flex gap-2 text-base text-secondary/70">
+                    <img src="./asstets/icons/price.png" alt="breed icon" />
+                    <p>Price: 199$</p>
+                  </span>
+                </div>
+                <!-- card button start -->
+                <div class="flex justify-between">
+                  <button
+                    class="h-8 md:h-10 px-4 md:px-5 border-2 border-gray-200 hover:border-primary/20 hover:bg-primary/20 rounded-lg text-gray-500 font-bold text-base lg:text-lg"
+                  >
+                    <i class="fa-regular fa-thumbs-up"></i>
+                  </button>
+                  <button
+                    class="h-8 md:h-10 px-4 md:px-5 border-2 border-gray-200 hover:border-primary/20 hover:bg-primary/20 rounded-lg text-primary font-bold text-base lg:text-lg"
+                  >
+                    Adopt
+                  </button>
+                  <button
+                    class="h-8 md:h-10 px-4 md:px-5 border-2 border-gray-200 hover:border-primary/20 hover:bg-primary/20 rounded-lg text-primary font-bold text-base lg:text-lg"
+                  >
+                    Details
+                  </button>
+                </div>
+                <!-- card button end -->
+              </div>
+              <!-- card content end -->
+            </div>
+            <!-- card end -->
+            <!-- card -->
+            <div class="p-5 border border-gray-200 rounded-xl space-y-6">
+              <img
+                class="w-full rounded-lg"
+                src="https://i.ibb.co.com/BwnvDMY/pet-5.jpg"
+                alt="pets image"
+              />
+              <!-- card content -->
+              <div class="">
+                <div class="border-b pb-3 mb-3 space-y-1">
+                  <h3 class="text-lg md:text-xl font-bold text-black">
+                    Mister Tartosh
+                  </h3>
+                  <span class="flex gap-2 text-base text-secondary/70">
+                    <img src="./asstets/icons/breed.png" alt="breed icon" />
+                    <p>Breed: Golder retriever</p>
+                  </span>
+                  <span class="flex gap-2 text-base text-secondary/70">
+                    <img src="./asstets/icons/birth.png" alt="birth icon" />
+                    <p>Birth: 2024</p>
+                  </span>
+                  <span class="flex gap-2 text-base text-secondary/70">
+                    <img src="./asstets/icons/gender.png" alt="breed icon" />
+                    <p>Gender: Female</p>
+                  </span>
+                  <span class="flex gap-2 text-base text-secondary/70">
+                    <img src="./asstets/icons/price.png" alt="breed icon" />
+                    <p>Price: 199$</p>
+                  </span>
+                </div>
+                <!-- card button start -->
+                <div class="flex justify-between">
+                  <button
+                    class="h-8 md:h-10 px-4 md:px-5 border-2 border-gray-200 hover:border-primary/20 hover:bg-primary/20 rounded-lg text-gray-500 font-bold text-base lg:text-lg"
+                  >
+                    <i class="fa-regular fa-thumbs-up"></i>
+                  </button>
+                  <button
+                    class="h-8 md:h-10 px-4 md:px-5 border-2 border-gray-200 hover:border-primary/20 hover:bg-primary/20 rounded-lg text-primary font-bold text-base lg:text-lg"
+                  >
+                    Adopt
+                  </button>
+                  <button
+                    class="h-8 md:h-10 px-4 md:px-5 border-2 border-gray-200 hover:border-primary/20 hover:bg-primary/20 rounded-lg text-primary font-bold text-base lg:text-lg"
+                  >
+                    Details
+                  </button>
+                </div>
+                <!-- card button end -->
+              </div>
+              <!-- card content end -->
+            </div>
+            <!-- card end -->
+          </div>
+          <!-- left side end -->
+          <!-- right side start -->
+          <div
+            class="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4 content-start md:gap-6 border border-gray-200 rounded-xl p-5"
+          >
+            <div>
+              <img
+                class="w-full h-32 object-cover rounded-lg"
+                src="https://i.ibb.co.com/p0w744T/pet-1.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                class="w-full h-32 object-cover rounded-lg"
+                src="https://i.ibb.co.com/p0w744T/pet-2.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                class="w-full h-32 object-cover rounded-lg"
+                src="https://i.ibb.co.com/p0w744T/pet-3.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                class="w-full h-32 object-cover rounded-lg"
+                src="https://i.ibb.co.com/p0w744T/pet-4.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <!-- right side end -->
+        </section>
+        <!-- category container end -->
+      </section>
+      <!-- adopt best friend section end -->
     </main>
     <!-- main section end -->
     <!-- footer section start  -->
-    <footer></footer>
+    <footer class="bg-secondary">
+      <div class="w-11/12 mx-auto py-[100px] grid grid-cols-3 justify-between">
+        <!-- left column start -->
+         <div class="md:col-span-2 lg:col-span-1 space-y-6">
+          <div class="flex gap-3">
+            <img src="./asstets/images/logo.webp" alt="logo footer">
+            <a href="#">Peddy</a>
+          </div>
+          <!-- content -->
+          <div class="space-y-2">
+            <p>Location: av. Washington 165, NY CA 54003</p>
+            <p>Phone: +31 85 964 47 25</p>
+            <p>Email: info@yourdomain.com</p>
+            <p>Openings hours: 9.00 AM - 5.00 PM</p>
+          </div>
+          <!-- social -->
+          <div class="flex gap-6">
+            <a href="https://www.facebook.com">
+              <img src="./asstets/icons/fb.png" alt="social icon">
+            </a>
+            <a href="https://www.x.com">
+              <img src="./asstets/icons/x-2.png" alt="social icon">
+            </a>
+            <a href="https://www.youtube.com">
+              <img src="./asstets/icons/youtube.png" alt="social icon">
+            </a>
+            <a href="https://www.instagram.com">
+              <img src="./asstets/icons/insta.png" alt="social icon">
+            </a>
+          </div>
+         </div>
+        <!-- left column end -->
+        <!-- middle column start -->
+         <div></div>
+        <!-- middle column end -->
+        <!-- right column start -->
+         <div></div>
+        <!-- right column end -->
+      </div>
+    </footer>
     <!-- footer section end -->
 
     <script src="./scripts/app.js"></script>
