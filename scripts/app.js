@@ -199,11 +199,13 @@ const adoptPet = (id)=>{
         adoptTimeEl.innerText = countTime;
 
         if(countTime === 1){
-          clearInterval(inerval);
-          myAdoptModal.close();
-          petBtn.innerText = "adopted";
-          petBtn.setAttribute('disabled',true);
-          petBtn.classList.add('!bg-gray-300','!text-gray-500','!hover:bg-tranparent' ,'!border-0')
+          setTimeout(() => {
+            clearInterval(inerval);
+            myAdoptModal.close();
+            petBtn.innerText = "adopted";
+            petBtn.setAttribute('disabled',true);
+            petBtn.classList.add('!bg-gray-300','!text-gray-500','!hover:bg-tranparent' ,'!border-0')
+          }, 500);
         }
     }, 1000);
 
@@ -250,7 +252,7 @@ const displayPetDetails = (pet)=>{
                   ${pet_name}
                 </h3>
                 <div class="space-y-2 pb-4 mb-4 border-b">
-                  <div class="flex flex-col md:flex-row gap-2 justify-between w-2/3">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-2 justify-between w-3/4">
                     <span class="flex gap-2 text-base text-secondary/70">
                       <img src="./asstets/icons/breed.png" alt="breed icon" />
                       <p>Breed: ${breed ? breed : 'Unknown'}</p>
@@ -260,7 +262,7 @@ const displayPetDetails = (pet)=>{
                       <p>Birth: ${date_of_birth ? date_of_birth : "Unknown"}</p>
                     </span>
                   </div>
-                  <div class="flex flex-col md:flex-row gap-2 justify-between w-2/3">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-2 justify-between w-3/4">
                     <span class="flex gap-2 text-base text-secondary/70">
                       <img src="./asstets/icons/gender.png" alt="breed icon" />
                       <p>Gender: ${gender ? gender : "Uknown"}</p>
