@@ -57,7 +57,6 @@ const loadPets = async()=>{
   const response = await fetch(`https://openapi.programming-hero.com/api/peddy/pets`);
     const data = await response.json();
     displayPets(data.pets);
-    sortPetsByPrice(data.pets);
 }
 // spinner functionality
 const handleSpinner = () =>{
@@ -163,13 +162,27 @@ const handleLikeBtn = (imgLink) =>{
 
 // short by pet price
 const sortPetsByPrice = async (category)=>{
+  handleSpinner();
+  
+
+  // fetch the data
   const res = await fetch(`https://openapi.programming-hero.com/api/peddy/${category ? 'category/' + category : 'pets'}`);
   const data = await res.json();
-  // console.log(data);
+  const pets =  category ? data.data : data.pets;
+  console.log(pets);
+
+  // sorted pet
+  let sortedPets = [...pets].sort((a,b)=> b.price - a.price);
+
+  displayPets(sortedPets);
+  console.log(category);
+  
+
+
 }
 
 // sort button features
-// sortBtn.addEventListener('click',sortPetsByPrice);
+sortBtn.onclick = () => sortPetsByPrice();
 
 //  pet adoption 
 const adoptPet = (id)=>{
@@ -291,7 +304,7 @@ const resetActiveBtn = () =>{
   })
 }
 
-// loadCategories post
+// loadCategories pets
 const loadCategoriesPets = async (category_name)=>{
   handleSpinner();
   const response = await fetch(`https://openapi.programming-hero.com/api/peddy/category/${category_name.toLowerCase()}`);
@@ -309,6 +322,10 @@ const loadCategoriesPets = async (category_name)=>{
 
 
   displayPets(data.data);
+  
+  // short when clicking categories
+  sortBtn.onclick = ()=>  sortPetsByPrice(category_name.toLowerCase());
+
 }
 
 
@@ -316,4 +333,4 @@ const loadCategoriesPets = async (category_name)=>{
 
 
 loadCategories();
-loadPets(false);
+loadPets();
