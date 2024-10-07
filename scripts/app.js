@@ -2,6 +2,9 @@ const menuBar = document.getElementById('menu-bar');
 const menuSection = document.getElementById('menu-sec');
 const viewMoreBtn = document.getElementById('btn-view-more');
 const petsContainer = document.getElementById('pets-container');
+const sortBtn = document.getElementById('btn-sort');
+
+// menubar collapse
 menuBar.addEventListener('click',()=>{
     if(menuSection.classList.contains('hidden')){
         menuSection.classList.remove('hidden');
@@ -54,6 +57,7 @@ const loadPets = async()=>{
   const response = await fetch(`https://openapi.programming-hero.com/api/peddy/pets`);
     const data = await response.json();
     displayPets(data.pets);
+    sortPetsByPrice(data.pets);
 }
 // spinner functionality
 const handleSpinner = () =>{
@@ -118,6 +122,8 @@ const displayPets = (pets) =>{
                       <i class="fa-regular fa-thumbs-up"></i>
                     </button>
                     <button
+                      id="adopt-${pet.petId}"
+                      onclick="adoptPet('${pet.petId}')"
                       class="h-8 md:h-10 px-4 md:px-5 border-2 border-gray-200 hover:border-primary/20 hover:bg-primary/20 rounded-lg text-primary font-bold text-base lg:text-lg"
                     >
                       Adopt
@@ -154,6 +160,49 @@ const handleLikeBtn = (imgLink) =>{
   likedPets.appendChild(div);
 
 };
+
+// short by pet price
+const sortPetsByPrice = async (category)=>{
+  const res = await fetch(`https://openapi.programming-hero.com/api/peddy/${category ? 'category/' + category : 'pets'}`);
+  const data = await res.json();
+  // console.log(data);
+}
+
+// sort button features
+// sortBtn.addEventListener('click',sortPetsByPrice);
+
+//  pet adoption 
+const adoptPet = (id)=>{
+    const petBtn = document.getElementById(`adopt-${id}`);
+    const myAdoptModal = document.getElementById('my_modal_2');
+    const adoptTimeEl = document.getElementById('adopt-time');
+    let countTime = 3;
+    adoptTimeEl.innerHTML = countTime;
+    const inerval = setInterval(() => {
+        countTime--;
+        adoptTimeEl.innerText = countTime;
+
+        if(countTime === 0){
+          clearInterval(inerval);
+          myAdoptModal.close();
+          petBtn.innerText = "adopted";
+          petBtn.setAttribute('disabled',true);
+        }
+    }, 1000);
+
+    // show modal 
+    myAdoptModal.showModal();
+
+    setTimeout(() => {
+      if(countTime > 0){
+        clearInterval(inerval);
+        myAdoptModal.close();
+        petBtn.innerText = 'Adopted';
+        petBtn.setAttribute('disabled',true);
+      }
+    }, 3000);
+
+}
 
 // load the pets info by id
 const showPetDetails = async (id) =>{
