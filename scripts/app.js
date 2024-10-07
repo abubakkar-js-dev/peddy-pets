@@ -49,8 +49,8 @@ const displayCategories = (categories) =>{
 
 
 // load all pets
-const loadPets = async(petCategory)=>{
-  const response = await fetch(`https://openapi.programming-hero.com/api/peddy/${petCategory ? petCategory.toLowerCase() : 'pets'}`);
+const loadPets = async()=>{
+  const response = await fetch(`https://openapi.programming-hero.com/api/peddy/pets`);
     const data = await response.json();
     displayPets(data.pets);
 }
@@ -95,6 +95,7 @@ const displayPets = (pets) =>{
                   <!-- card button start -->
                   <div class="flex justify-between">
                     <button
+                      onclick="handleLikeBtn('${image}')"
                       class="h-8 md:h-10 px-4 md:px-5 border-2 border-gray-200 hover:border-primary/20 hover:bg-primary/20 rounded-lg text-gray-500 font-bold text-base lg:text-lg"
                     >
                       <i class="fa-regular fa-thumbs-up"></i>
@@ -105,7 +106,7 @@ const displayPets = (pets) =>{
                       Adopt
                     </button>
                     <button
-                      
+                      onclick="showPetDetails('${pet.petId}')"
                       class="h-8 md:h-10 px-4 md:px-5 border-2 border-gray-200 hover:border-primary/20 hover:bg-primary/20 rounded-lg text-primary font-bold text-base lg:text-lg"
                     >
                       Details
@@ -118,6 +119,104 @@ const displayPets = (pets) =>{
         petsContainer.appendChild(div);
     });
 }
+
+// handle like bnt
+
+const handleLikeBtn = (imgLink) =>{
+  const likedPets = document.getElementById('liked-pets-container');
+  const noPetsLikedMgs = document.getElementById('no-pets-mgs');
+  noPetsLikedMgs.classList.add('hidden');
+  const div = document.createElement('div');
+  div.innerHTML = `
+        <img
+      class="w-full h-32 object-cover rounded-lg"
+      src="${imgLink}"
+      alt="pet images"
+    />
+  `;
+  likedPets.appendChild(div);
+
+};
+
+// load the pets info by id
+const showPetDetails = async (id) =>{
+  const response = await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id}`);
+  const data = await response.json();
+  displayPetDetails(data.petData);
+};
+
+// display the pet information
+
+const displayPetDetails = (pet)=>{
+  const detailsContainer = document.getElementById('details-container');
+  const {breed,category,date_of_birth,price,image,gender,pet_name,pet_details,vaccinated_status} = pet;
+  detailsContainer.innerHTML = `
+          <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box max-w-[700px] p-6 md:p-8 rounded-xl">
+            <img
+              class="w-full object-cover h-[320px] rounded-lg mb-5 md:mb-6"
+              src="${image}"
+              alt="${pet_name} picture"
+            />
+            <div>
+              <!-- pet information -->
+              <div>
+                <h3
+                  class="mb-3 md:mb-4 text-xl md:text-2xl font-bold text-secondary"
+                >
+                  ${pet_name}
+                </h3>
+                <div class="space-y-2 pb-4 mb-4 border-b">
+                  <div class="flex flex-col md:flex-row gap-2 justify-between w-2/3">
+                    <span class="flex gap-2 text-base text-secondary/70">
+                      <img src="./asstets/icons/breed.png" alt="breed icon" />
+                      <p>Breed: ${breed ? breed : 'Unknown'}</p>
+                    </span>
+                    <span class="flex gap-2 text-base text-secondary/70">
+                      <img src="./asstets/icons/birth.png" alt="birth icon" />
+                      <p>Birth: ${date_of_birth ? date_of_birth : "Unknown"}</p>
+                    </span>
+                  </div>
+                  <div class="flex flex-col md:flex-row gap-2 justify-between w-2/3">
+                    <span class="flex gap-2 text-base text-secondary/70">
+                      <img src="./asstets/icons/gender.png" alt="breed icon" />
+                      <p>Gender: ${gender ? gender : "Uknown"}</p>
+                    </span>
+                    <span class="flex gap-2 text-base text-secondary/70">
+                      <img src="./asstets/icons/price.png" alt="breed icon" />
+                      <p>Price: ${price ? price+'$' : 'Unknown'}</p>
+                    </span> 
+                  </div>
+                  <div>
+                    <span class="flex gap-2 text-base text-secondary/70">
+                      <img src="./asstets/icons/gender.png" alt="breed icon" />
+                      <p>Vaccinated status: ${vaccinated_status ? vaccinated_status : "Unknown"}</p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- details informaion -->
+              <div>
+                <h2 class="text-base font-semibold mb-3 text-secondary">Details Information</h2>
+                <p class="text-base text-secondary/70 mb-2">Learn more about each pet's unique characteristics, including their breed, age, and health history. This section gives you all the personalized details you need to find your ideal companion.</p>
+                <ul class="list-disc list-inside text-base text-secondary/70">
+                  <li class="pl-3">${pet_details}</li>
+                </ul>
+              </div>
+            </div>
+            <div class="modal-action w-ful block">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="h-10 md:h-12 w-full text-lg md:text-xl text-primary bg-primary/10 hover:bg-primary/20 border border-primary/20 rounded-lg">Cancel</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+  `;
+  my_modal_5.showModal();
+}
+
+
 
 const resetActiveBtn = () =>{
   const buttons = document.querySelectorAll('#category-menu-container button');
@@ -138,13 +237,6 @@ const loadCategoriesPets = async (category_name)=>{
   // change the activity
   resetActiveBtn();
   const activeBtn = document.getElementById(`btn-categ-${category_name.toLowerCase()}`);
-
-  // if(activeBtn.classList.contains('rounded-xl')){
-  //   activeBtn.classList.remove('rounded-xl');
-  //   activeBtn.classList.add('rounded-full');
-  // }else{
-  //   activeBtn.classList.add('rounded-xl');
-  // }
   activeBtn.classList.add('!rounded-full','border-primary','bg-primary/10');
   
 

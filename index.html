@@ -228,103 +228,19 @@
           <!-- left side if no category found end -->
           <!-- right side start -->
           <div
+            id="liked-pets-container"
             class="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4 content-start md:gap-6 border border-gray-200 rounded-xl p-5"
           >
-            <div>
-              <img
-                class="w-full h-32 object-cover rounded-lg"
-                src="https://i.ibb.co.com/p0w744T/pet-1.jpg"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                class="w-full h-32 object-cover rounded-lg"
-                src="https://i.ibb.co.com/p0w744T/pet-2.jpg"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                class="w-full h-32 object-cover rounded-lg"
-                src="https://i.ibb.co.com/p0w744T/pet-3.jpg"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                class="w-full h-32 object-cover rounded-lg"
-                src="https://i.ibb.co.com/p0w744T/pet-4.jpg"
-                alt=""
-              />
-            </div>
+          <h2 id="no-pets-mgs" class="text-lg md:text-xl lg:text-2xl font-bold block w-full">No Pets Liked</h2>
+            <!-- dinamically will load data -->
           </div>
           <!-- right side end -->
         </section>
         <!-- pets category container end -->
         <!-- modals -->
-        <button class="btn" onclick="my_modal_5.showModal()">open modal</button>
-        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-          <div class="modal-box max-w-[700px] p-6 md:p-8 rounded-xl">
-            <img
-              class="w-full object-cover h-[320px] rounded-lg mb-5 md:mb-6"
-              src="https://i.ibb.co.com/PFbWMGk/pet-6.jpg"
-              alt=""
-            />
-            <div>
-              <!-- pet information -->
-              <div>
-                <h3
-                  class="mb-3 md:mb-4 text-xl md:text-2xl font-bold text-secondary"
-                >
-                  Alessia Max
-                </h3>
-                <div class="space-y-2 pb-4 mb-4 border-b">
-                  <div class="flex flex-col md:flex-row gap-2 justify-between w-2/3">
-                    <span class="flex gap-2 text-base text-secondary/70">
-                      <img src="./asstets/icons/breed.png" alt="breed icon" />
-                      <p>Breed: Golder retriever</p>
-                    </span>
-                    <span class="flex gap-2 text-base text-secondary/70">
-                      <img src="./asstets/icons/birth.png" alt="birth icon" />
-                      <p>Birth: 2024</p>
-                    </span>
-                  </div>
-                  <div class="flex flex-col md:flex-row gap-2 justify-between w-2/3">
-                    <span class="flex gap-2 text-base text-secondary/70">
-                      <img src="./asstets/icons/gender.png" alt="breed icon" />
-                      <p>Gender: Female</p>
-                    </span>
-                    <span class="flex gap-2 text-base text-secondary/70">
-                      <img src="./asstets/icons/price.png" alt="breed icon" />
-                      <p>Price: 199$</p>
-                    </span> 
-                  </div>
-                  <div>
-                    <span class="flex gap-2 text-base text-secondary/70">
-                      <img src="./asstets/icons/gender.png" alt="breed icon" />
-                      <p>Vaccinated status: Partially</p>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <!-- details informaion -->
-              <div>
-                <h2 class="text-base font-semibold mb-3 text-secondary">Details Information</h2>
-                <p class="text-base text-secondary/70">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                <ul class="list-disc list-inside text-base text-secondary/70">
-                  <li class="pl-3">The point of using is that it has a more-or-less normal distribution of letters, as opposed to using.</li>
-                </ul>
-              </div>
-            </div>
-            <div class="modal-action w-ful block">
-              <form method="dialog">
-                <!-- if there is a button in form, it will close the modal -->
-                <button class="h-10 md:h-12 w-full text-lg md:text-xl text-primary bg-primary/10 hover:bg-primary/20 border border-primary/20 rounded-lg">Cancel</button>
-              </form>
-            </div>
-          </div>
-        </dialog>
+        <div id="details-container">
+            <!-- dinamically will load -->
+        </div>
       </section>
       <!-- adopt best friend section end -->
     </main>
@@ -353,7 +269,7 @@
           <div class="space-y-2 text-base text-white/90">
             <p>Location: av. Washington 165, NY CA 54003</p>
             <p>Phone: +31 85 964 47 25</p>
-            <p>Email: info@yourdomain.com</p>
+            <p>Email: info@peddy32.com</p>
             <p>Openings hours: 9.00 AM - 5.00 PM</p>
           </div>
           <!-- social -->
