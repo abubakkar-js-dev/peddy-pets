@@ -202,7 +202,7 @@ const adoptPet = (id)=>{
           setTimeout(() => {
             clearInterval(inerval);
             myAdoptModal.close();
-            petBtn.innerText = "adopted";
+            petBtn.innerText = "Adopted";
             petBtn.setAttribute('disabled',true);
             petBtn.classList.add('!bg-gray-300','!text-gray-500','!hover:bg-tranparent' ,'!border-0')
           }, 500);
