@@ -195,11 +195,12 @@ const adoptPet = (id)=>{
         countTime--;
         adoptTimeEl.innerText = countTime;
 
-        if(countTime === 0){
+        if(countTime === 1){
           clearInterval(inerval);
           myAdoptModal.close();
           petBtn.innerText = "adopted";
           petBtn.setAttribute('disabled',true);
+          petBtn.classList.add('!bg-gray-300','!text-gray-500','!hover:bg-tranparent' ,'!border-0')
         }
     }, 1000);
 
@@ -207,7 +208,7 @@ const adoptPet = (id)=>{
     myAdoptModal.showModal();
 
     setTimeout(() => {
-      if(countTime > 0){
+      if(countTime > 1){
         clearInterval(inerval);
         myAdoptModal.close();
         petBtn.innerText = 'Adopted';
