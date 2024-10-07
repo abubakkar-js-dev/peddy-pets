@@ -3,6 +3,7 @@ const menuSection = document.getElementById('menu-sec');
 const viewMoreBtn = document.getElementById('btn-view-more');
 const petsContainer = document.getElementById('pets-container');
 const sortBtn = document.getElementById('btn-sort');
+const likedPets = document.getElementById('liked-pets-container');
 
 // menubar collapse
 menuBar.addEventListener('click',()=>{
@@ -142,12 +143,14 @@ const displayPets = (pets) =>{
     });
 }
 
-// handle like bnt
+//  like pets
 
+likedPets.classList.remove('grid');
 const handleLikeBtn = (imgLink) =>{
-  const likedPets = document.getElementById('liked-pets-container');
+  // const likedPets = document.getElementById('liked-pets-container');
   const noPetsLikedMgs = document.getElementById('no-pets-mgs');
   noPetsLikedMgs.classList.add('hidden');
+  likedPets.classList.add('grid');
   const div = document.createElement('div');
   div.innerHTML = `
         <img
