@@ -50,9 +50,26 @@ const displayCategories = (categories) =>{
 
 // load all pets
 const loadPets = async()=>{
+  handleSpinner();
   const response = await fetch(`https://openapi.programming-hero.com/api/peddy/pets`);
     const data = await response.json();
     displayPets(data.pets);
+}
+// spinner functionality
+const handleSpinner = () =>{
+  const spinner = document.getElementById('spinner');
+  const petContainerCols = document.getElementById('pets-col-wrap');
+  try {
+    spinner.classList.remove('hidden');
+    petContainerCols.classList.add('hidden');
+    setTimeout(() => {
+      spinner.classList.add('hidden');
+      petContainerCols.classList.remove('hidden');
+    }, 2000);
+  } catch (error) {
+    // if error hide the spinner
+    spinner.classList.add('hidden');
+  }
 }
 
 // display pet
@@ -227,6 +244,7 @@ const resetActiveBtn = () =>{
 
 // loadCategories post
 const loadCategoriesPets = async (category_name)=>{
+  handleSpinner();
   const response = await fetch(`https://openapi.programming-hero.com/api/peddy/category/${category_name.toLowerCase()}`);
   const data =  await response.json();
   if(data.data.length === 0){

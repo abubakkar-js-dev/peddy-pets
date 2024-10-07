@@ -171,7 +171,7 @@
           id="category-menu-container"
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 justify-items-center mx-auto"
         >
-              <!-- dinamically will load data -->
+          <!-- dinamically will load data -->
         </div>
         <!-- category menu section end -->
 
@@ -188,13 +188,22 @@
         </div>
         <!-- best deal end -->
         <!-- pets category container start -->
+        <!-- loading spinner start -->
+        <div id="spinner" class="flex justify-center h-[30vh]">
+          <span class="loading loading-bars bg-primary/80 loading-md lg:loading-lg"></span>
+        </div>
+        <!-- loading spinner end -->
         <section
+          id="pets-col-wrap"
           class="grid grid-cols-1 md:grid-cols-4 justify-between items-start gap-6"
         >
           <!-- left side container start -->
-          <div class=" md:col-span-3">
-            <div id="pets-container" class="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-6">
-                    <!-- will dinamically add card -->
+          <div class="md:col-span-3">
+            <div
+              id="pets-container"
+              class="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-6"
+            >
+              <!-- will dinamically add card -->
             </div>
           </div>
           <!-- left side container end -->
@@ -231,7 +240,12 @@
             id="liked-pets-container"
             class="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4 content-start md:gap-6 border border-gray-200 rounded-xl p-5"
           >
-          <h2 id="no-pets-mgs" class="text-lg md:text-xl lg:text-2xl font-bold block w-full">No Pets Liked</h2>
+            <h2
+              id="no-pets-mgs"
+              class="text-lg md:text-xl lg:text-2xl font-bold block w-full"
+            >
+              No Pets Liked
+            </h2>
             <!-- dinamically will load data -->
           </div>
           <!-- right side end -->
@@ -239,7 +253,7 @@
         <!-- pets category container end -->
         <!-- modals -->
         <div id="details-container">
-            <!-- dinamically will load -->
+          <!-- dinamically will load -->
         </div>
       </section>
       <!-- adopt best friend section end -->
