@@ -281,7 +281,7 @@ const displayPetDetails = (pet)=>{
               <!-- details informaion -->
               <div>
                 <h2 class="text-base font-semibold mb-3 text-secondary">Details Information</h2>
-                <p class="text-base text-secondary/70 mb-2">Learn more about each pet's unique characteristics, including their breed, age, and health history. This section gives you all the personalized details you need to find your ideal companion.</p>
+                <p class="text-base text-secondary/70 mb-2">Learn more about each pet's unique characteristics, including their activities and information.</p>
                 <ul class="list-disc list-inside text-base text-secondary/70">
                   <li class="pl-3">${pet_details}</li>
                 </ul>
