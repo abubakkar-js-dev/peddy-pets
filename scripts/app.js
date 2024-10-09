@@ -64,8 +64,8 @@ const handleSpinner = () =>{
   const spinner = document.getElementById('spinner');
   const petContainerCols = document.getElementById('pets-col-wrap');
   try {
-    spinner.classList.remove('hidden');
     petContainerCols.classList.add('hidden');
+    spinner.classList.remove('hidden');
     setTimeout(() => {
       spinner.classList.add('hidden');
       petContainerCols.classList.remove('hidden');
